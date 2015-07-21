@@ -1,0 +1,483 @@
+{
+  "lastUpdated": 1433978,
+  "snapshot": {
+    "status": "SUCCESS",
+    "gameId": 18014398518686261,
+    "gameMode": "ConquestLarge",
+    "mapVariant": 0,
+    "currentMap": "XP4/Levels/XP4_SubBase/XP4_SubBase",
+    "maxPlayers": 48,
+    "waitingPlayers": 0,
+    "roundTime": 713,
+    "defaultRoundTimeMultiplier": 100,
+    "conquest": {
+      "2": {
+        "tickets": 844,
+        "ticketsMax": 1000
+      },
+      "1": {
+        "tickets": 895,
+        "ticketsMax": 1000
+      }
+    },
+    "teamInfo": {
+      "0": {
+        "faction": 0,
+        "players": {
+          "273188726": {
+            "name": "Leofricz",
+            "tag": "KIN",
+            "rank": 63,
+            "score": 0,
+            "kills": 0,
+            "deaths": 0,
+            "squad": 0,
+            "role": 1
+          }
+        }
+      },
+      "1": {
+        "faction": 0,
+        "players": {
+          "364390706": {
+            "name": "L-A-Pro-137",
+            "tag": "i420",
+            "rank": 118,
+            "score": 5304,
+            "kills": 8,
+            "deaths": 0,
+            "squad": 1,
+            "role": 1
+          },
+          "1126795808": {
+            "name": "fla5hpoint",
+            "tag": "i420",
+            "rank": 114,
+            "score": 5157,
+            "kills": 8,
+            "deaths": 0,
+            "squad": 1,
+            "role": 1
+          },
+          "812003161": {
+            "name": "RingelDingel2406",
+            "tag": "DiRa",
+            "rank": 110,
+            "score": 2868,
+            "kills": 17,
+            "deaths": 10,
+            "squad": 3,
+            "role": 1
+          },
+          "349399759": {
+            "name": "nurrwa",
+            "tag": "DiRa",
+            "rank": 121,
+            "score": 1218,
+            "kills": 4,
+            "deaths": 5,
+            "squad": 3,
+            "role": 1
+          },
+          "363472156": {
+            "name": "KleineMilchKuh",
+            "tag": "xD",
+            "rank": 124,
+            "score": 2417,
+            "kills": 5,
+            "deaths": 3,
+            "squad": 5,
+            "role": 1
+          },
+          "863331632": {
+            "name": "xXRocketSmithXx",
+            "tag": "",
+            "rank": 136,
+            "score": 2408,
+            "kills": 6,
+            "deaths": 0,
+            "squad": 1,
+            "role": 1
+          },
+          "816392480": {
+            "name": "HaawGen",
+            "tag": "NoR",
+            "rank": 107,
+            "score": 3548,
+            "kills": 15,
+            "deaths": 8,
+            "squad": 4,
+            "role": 1
+          },
+          "933807442": {
+            "name": "IamNoony",
+            "tag": "NoR",
+            "rank": 121,
+            "score": 2747,
+            "kills": 6,
+            "deaths": 8,
+            "squad": 4,
+            "role": 1
+          },
+          "192263303": {
+            "name": "SkoobyDooo",
+            "tag": "DiRa",
+            "rank": 93,
+            "score": 2382,
+            "kills": 9,
+            "deaths": 8,
+            "squad": 3,
+            "role": 1
+          },
+          "247223629": {
+            "name": "ViperXVII",
+            "tag": "TCF",
+            "rank": 133,
+            "score": 6804,
+            "kills": 9,
+            "deaths": 0,
+            "squad": 6,
+            "role": 1
+          },
+          "375876823": {
+            "name": "Noctis1410",
+            "tag": "BRMC",
+            "rank": 133,
+            "score": 3975,
+            "kills": 13,
+            "deaths": 1,
+            "squad": 5,
+            "role": 1
+          },
+          "850694541": {
+            "name": "Kitty1410",
+            "tag": "BRMC",
+            "rank": 113,
+            "score": 2403,
+            "kills": 8,
+            "deaths": 7,
+            "squad": 5,
+            "role": 1
+          },
+          "290024534": {
+            "name": "GoZeRuk",
+            "tag": "",
+            "rank": 85,
+            "score": 1376,
+            "kills": 2,
+            "deaths": 6,
+            "squad": 6,
+            "role": 1
+          },
+          "182101603": {
+            "name": "ZebraPeps",
+            "tag": "zOs",
+            "rank": 140,
+            "score": 5927,
+            "kills": 11,
+            "deaths": 1,
+            "squad": 6,
+            "role": 1
+          },
+          "1199805802": {
+            "name": "frightsy3",
+            "tag": "KYBC",
+            "rank": 113,
+            "score": 3198,
+            "kills": 3,
+            "deaths": 0,
+            "squad": 1,
+            "role": 1
+          },
+          "522367774": {
+            "name": "Sergrs84",
+            "tag": "",
+            "rank": 52,
+            "score": 575,
+            "kills": 4,
+            "deaths": 4,
+            "squad": 2,
+            "role": 1
+          },
+          "365808090": {
+            "name": "MrJones2904",
+            "tag": "UAV",
+            "rank": 54,
+            "score": 395,
+            "kills": 2,
+            "deaths": 0,
+            "squad": 2,
+            "role": 1
+          },
+          "877714631": {
+            "name": "Bugs_UKR",
+            "tag": "",
+            "rank": 140,
+            "score": 505,
+            "kills": 0,
+            "deaths": 0,
+            "squad": 0,
+            "role": 2
+          },
+          "857523870": {
+            "name": "Coombesing",
+            "tag": "UAV",
+            "rank": 95,
+            "score": 336,
+            "kills": 1,
+            "deaths": 0,
+            "squad": 2,
+            "role": 1
+          },
+          "226860528": {
+            "name": "kreuzfux",
+            "tag": "",
+            "rank": 15,
+            "score": 20,
+            "kills": 0,
+            "deaths": 0,
+            "squad": 4,
+            "role": 1
+          },
+          "364299922": {
+            "name": "MashMadness",
+            "tag": "",
+            "rank": 139,
+            "score": 0,
+            "kills": 0,
+            "deaths": 0,
+            "squad": 2,
+            "role": 1
+          }
+        }
+      },
+      "2": {
+        "faction": 1,
+        "players": {
+          "783740653": {
+            "name": "Kirito0590",
+            "tag": "762",
+            "rank": 74,
+            "score": 895,
+            "kills": 4,
+            "deaths": 10,
+            "squad": 8,
+            "role": 1
+          },
+          "330672673": {
+            "name": "1goldjunge",
+            "tag": "762",
+            "rank": 78,
+            "score": 2214,
+            "kills": 8,
+            "deaths": 8,
+            "squad": 8,
+            "role": 1
+          },
+          "378774775": {
+            "name": "bluebear-xDD",
+            "tag": "762r",
+            "rank": 126,
+            "score": 3693,
+            "kills": 13,
+            "deaths": 9,
+            "squad": 8,
+            "role": 1
+          },
+          "226333450": {
+            "name": "death-or-glory68",
+            "tag": "TOD",
+            "rank": 136,
+            "score": 2736,
+            "kills": 1,
+            "deaths": 7,
+            "squad": 1,
+            "role": 1
+          },
+          "268683144": {
+            "name": "marusyak28",
+            "tag": "",
+            "rank": 66,
+            "score": 1404,
+            "kills": 5,
+            "deaths": 5,
+            "squad": 8,
+            "role": 1
+          },
+          "363247257": {
+            "name": "LoRdG0nZo",
+            "tag": "TCF",
+            "rank": 120,
+            "score": 1844,
+            "kills": 4,
+            "deaths": 7,
+            "squad": 2,
+            "role": 1
+          },
+          "792099623": {
+            "name": "Dedaith",
+            "tag": "",
+            "rank": 25,
+            "score": 2010,
+            "kills": 3,
+            "deaths": 4,
+            "squad": 3,
+            "role": 1
+          },
+          "233389152": {
+            "name": "CrookedBarrel",
+            "tag": "TCF",
+            "rank": 137,
+            "score": 3306,
+            "kills": 7,
+            "deaths": 10,
+            "squad": 2,
+            "role": 1
+          },
+          "273669675": {
+            "name": "MrGameAndFace",
+            "tag": "IWE",
+            "rank": 134,
+            "score": 2300,
+            "kills": 8,
+            "deaths": 4,
+            "squad": 2,
+            "role": 1
+          },
+          "228187797": {
+            "name": "Th30ne",
+            "tag": "SAD",
+            "rank": 140,
+            "score": 1197,
+            "kills": 1,
+            "deaths": 7,
+            "squad": 2,
+            "role": 1
+          },
+          "367248126": {
+            "name": "Tea-Assault",
+            "tag": "TCF",
+            "rank": 136,
+            "score": 1708,
+            "kills": 3,
+            "deaths": 11,
+            "squad": 2,
+            "role": 1
+          },
+          "805539799": {
+            "name": "Cpl_Makaveli",
+            "tag": "FaKr",
+            "rank": 70,
+            "score": 997,
+            "kills": 3,
+            "deaths": 6,
+            "squad": 4,
+            "role": 1
+          },
+          "365509802": {
+            "name": "Sashkesss",
+            "tag": "FUR",
+            "rank": 34,
+            "score": 1416,
+            "kills": 3,
+            "deaths": 8,
+            "squad": 3,
+            "role": 1
+          },
+          "189107708": {
+            "name": "Zinnerz",
+            "tag": "",
+            "rank": 37,
+            "score": 682,
+            "kills": 2,
+            "deaths": 5,
+            "squad": 4,
+            "role": 1
+          },
+          "192870122": {
+            "name": "antherias",
+            "tag": "",
+            "rank": 101,
+            "score": 1300,
+            "kills": 2,
+            "deaths": 7,
+            "squad": 3,
+            "role": 1
+          },
+          "385467403": {
+            "name": "OneRibbon",
+            "tag": "",
+            "rank": 111,
+            "score": 1676,
+            "kills": 1,
+            "deaths": 3,
+            "squad": 1,
+            "role": 1
+          },
+          "800456319": {
+            "name": "bOrdO_iinsTinqT",
+            "tag": "FaKr",
+            "rank": 65,
+            "score": 450,
+            "kills": 1,
+            "deaths": 4,
+            "squad": 4,
+            "role": 1
+          },
+          "215350074": {
+            "name": "pelle1580",
+            "tag": "",
+            "rank": 69,
+            "score": 391,
+            "kills": 2,
+            "deaths": 3,
+            "squad": 1,
+            "role": 1
+          },
+          "366461561": {
+            "name": "Fulminatore",
+            "tag": "JES",
+            "rank": 82,
+            "score": 251,
+            "kills": 0,
+            "deaths": 1,
+            "squad": 1,
+            "role": 1
+          },
+          "921987551": {
+            "name": "LLluLLIKaTelenaT",
+            "tag": "",
+            "rank": 80,
+            "score": 0,
+            "kills": 0,
+            "deaths": 0,
+            "squad": 3,
+            "role": 1
+          }
+        }
+      }
+    }
+  }
+}
+===============================================================================
+# role: 1 - normal soldier
+# role: 2 - commander
+# faction: 0 - US
+# faction: 1 - RU
+# faction: 2 - CN
+# teamInfo['0'] => people joining the server
+# teamInfo['1'] vs. teamInfo['2']
+
+-------------------------------------------------------------------------------
+
+"conquest" is there when the game mode is AirSuperiority, Chainlink, ConquestLarge, ConquestSmall, Domination, or Obliteration
+"deathmatch" for SquadDeathMatch, TeamDeathMatch
+"carrierAssault"
+Gun Master doesn't have one, doesn't have a game mode
+"rush" for RushLarge, Elimination (Defuse)
+
+-------------------------------------------------------------------------------
+
+"roundTime" is in seconds
+
+-------------------------------------------------------------------------------
