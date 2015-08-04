@@ -379,12 +379,10 @@ trap("INT") { puts "Shutting down."; exit }
     #   sleep_interval += 3
     # end
 
-
   # rescue
   #   puts "Server Data unavailable..."
   #   sleep_interval *= 2
   # end
-
 
   # sleep sleep_interval
 # end

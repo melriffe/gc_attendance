@@ -309,13 +309,13 @@ keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
 trap("INT") { puts "Shutting down."; exit }
 
 today = Date.today.strftime("%Y-%m-%d")
-battle_reports_location = "./battle_reports/#{today}/#{servers[servers.keys.last]}"
+battle_reports_location = "./battle_reports/#{today}/#{servers[servers.keys.first]}"
 FileUtils.mkdir_p battle_reports_location
 
 puts "Saving battle reports in #{battle_reports_location}"
 
 while true do
-  sleep_interval = 15
+  sleep_interval = 60
 
   response = RestClient.get keeper_url
 

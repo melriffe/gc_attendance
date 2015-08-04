@@ -312,7 +312,7 @@ FileUtils.mkdir_p battle_reports_location
 puts "Saving battle reports in #{battle_reports_location}"
 
 while true do
-  sleep_interval = 15
+  sleep_interval = 60
 
   response = RestClient.get keeper_url
 
