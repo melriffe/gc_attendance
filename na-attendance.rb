@@ -306,7 +306,7 @@ keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
 trap("INT") { puts "Shutting down."; exit }
 
 today = Date.today.strftime("%Y-%m-%d")
-battle_reports_location = "./battle_reports/#{today}/#{servers[servers.keys.last]}"
+battle_reports_location = "./battle_reports/#{today}/#{servers[uuid]}"
 FileUtils.mkdir_p battle_reports_location
 
 puts "Saving battle reports in #{battle_reports_location}"

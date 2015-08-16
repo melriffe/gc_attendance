@@ -300,16 +300,13 @@ servers = {
   'eb414b20-dc82-4058-9ae1-c6ca610d845e' => 'Global-Conflict-org-US-Server',
 }
 
-# uuid = "eb414b20-dc82-4058-9ae1-c6ca610d845e"
-# uuid = "3ac44c83-df31-4bc4-bccb-fea4902a0304"
-# uuid = "26edcc9f-172e-445c-b25f-649f099939e3"
 uuid = servers.keys.first
 keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
 
 trap("INT") { puts "Shutting down."; exit }
 
 today = Date.today.strftime("%Y-%m-%d")
-battle_reports_location = "./battle_reports/#{today}/#{servers[servers.keys.first]}"
+battle_reports_location = "./battle_reports/#{today}/#{servers[uuid]}"
 FileUtils.mkdir_p battle_reports_location
 
 puts "Saving battle reports in #{battle_reports_location}"

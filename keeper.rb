@@ -293,6 +293,9 @@ end
 
 puts "Calling http://keeper.battlelog.com"
 
+# uuid = "eb414b20-dc82-4058-9ae1-c6ca610d845e"
+# uuid = "3ac44c83-df31-4bc4-bccb-fea4902a0304"
+# uuid = "26edcc9f-172e-445c-b25f-649f099939e3"
 uuid = "3ac44c83-df31-4bc4-bccb-fea4902a0304"
 keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
 
