@@ -297,6 +297,7 @@ puts "Calling http://keeper.battlelog.com"
 
 servers = {
   '3ac44c83-df31-4bc4-bccb-fea4902a0304' => 'Global-Conflict-org-EU-Server',
+  '624a8797-26bb-436f-92de-2a375c7268f0' => '21CW-GC-Scrim',
   'eb414b20-dc82-4058-9ae1-c6ca610d845e' => 'Global-Conflict-org-US-Server',
 }
 
