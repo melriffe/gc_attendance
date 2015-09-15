@@ -126,6 +126,7 @@ class BattlefieldMap
     "XP4_SubBase"   => "Hammerhead",
     "XP4_Titan"     => "Hangar 21",
     "XP4_WlkrFtry"  => "Giants Of Karelia",
+    "XP5_Night_01"  => "Zavod: Graveyard Shift"
   }
 
 end
@@ -291,15 +292,16 @@ def center message
   (' ' * (39 - message.size / 2)) + message
 end
 
-puts "Calling http://keeper.battlelog.com"
+puts 'Calling http://keeper.battlelog.com'
 
-# uuid = "eb414b20-dc82-4058-9ae1-c6ca610d845e"
-# uuid = "3ac44c83-df31-4bc4-bccb-fea4902a0304"
-# uuid = "26edcc9f-172e-445c-b25f-649f099939e3"
-uuid = "3ac44c83-df31-4bc4-bccb-fea4902a0304"
+# uuid = '26edcc9f-172e-445c-b25f-649f099939e3'
+# uuid = '3ac44c83-df31-4bc4-bccb-fea4902a0304'
+# uuid = 'eb414b20-dc82-4058-9ae1-c6ca610d845e'
+# uuid = '4e54a287-4ae0-4622-ad63-b6a6f66fd4af'
+uuid = 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
 keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
 
-trap("INT") { puts "Shutting down."; exit }
+trap('INT') { puts 'Shutting down.'; exit }
 
 # today = Date.today.strftime("%Y-%m-%d")
 # battle_reports_location = "./battle_reports/#{today}"
@@ -307,14 +309,18 @@ trap("INT") { puts "Shutting down."; exit }
 
 # puts "Saving battle reports in #{battle_reports_location}"
 
-# while true do
-  # sleep_interval = 5
+while true do
+  sleep_interval = 5
 
   response = RestClient.get keeper_url
 
   puts response.code
   data = JSON.parse response
-  ap data
+  # ap data
+  ap data['snapshot']['status']
+  ap data['snapshot']['gameId']
+  ap data['snapshot']['roundTime']
+  ap data['snapshot']['currentMap']
 
   # begin
     # game = Game.new data
@@ -387,5 +393,5 @@ trap("INT") { puts "Shutting down."; exit }
   #   sleep_interval *= 2
   # end
 
-  # sleep sleep_interval
-# end
+  sleep sleep_interval
+end
