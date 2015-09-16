@@ -57,3 +57,10 @@ Maps, of the Battlefield 4 kind. I'm not sure but the keeper API end-point might
 only support BF4 Servers. It is - I just tested it with a BF3 Server UUID.
 
 Servers: A list of the servers, with name and UUID, the app will track.
+
+--------------------------------------------------------------------------------
+random thoughts:
+
+* live scoreboard with an image for the selected map
+--------------------------------------------------------------------------------
+
