@@ -459,25 +459,3 @@
     }
   }
 }
-===============================================================================
-# role: 1 - normal soldier
-# role: 2 - commander
-# faction: 0 - US
-# faction: 1 - RU
-# faction: 2 - CN
-# teamInfo['0'] => people joining the server
-# teamInfo['1'] vs. teamInfo['2']
-
--------------------------------------------------------------------------------
-
-"conquest" is there when the game mode is AirSuperiority, Chainlink, ConquestLarge, ConquestSmall, Domination, or Obliteration
-"deathmatch" for SquadDeathMatch, TeamDeathMatch
-"carrierAssault"
-Gun Master doesn't have one, doesn't have a game mode
-"rush" for RushLarge, Elimination (Defuse)
-
--------------------------------------------------------------------------------
-
-"roundTime" is in seconds
-
--------------------------------------------------------------------------------

@@ -63,4 +63,3 @@ random thoughts:
 
 * live scoreboard with an image for the selected map
 --------------------------------------------------------------------------------
-
