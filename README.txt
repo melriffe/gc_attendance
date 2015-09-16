@@ -1,6 +1,6 @@
 What do these scripts do?
 
-They call the keeper battlelog API end-point. The data returned is JSON and
+They call the keeper battle log API end-point. The data returned is JSON and
 represents a 'snapshot' of a game in progress. This data can be used to track
 attendance. However, the data provides more information that might be
 interesting to also track: commanders, people joining the server, squads,
@@ -38,3 +38,22 @@ random thoughts:
 - other statistical analysis & reports
 --------------------------------------------------------------------------------
 
+The initial web app will display the data like the attendance report. I'll add
+other features later.
+
+Should I have a button that, when pressed, produces the Attendance Report and
+uploads it to Gist?
+
+Or, can the web app have another interface that lists all the battles it has
+stored and, based on a selection, produce the report for the specified round?
+
+This list, which would have to use the same 'unique' attributes used when
+recording, would have to display Server-Map-Round_Length.
+
+
+Utility Models (tables):
+
+Maps, of the Battlefield 4 kind. I'm not sure but the keeper API end-point might
+only support BF4 Servers. It is - I just tested it with a BF3 Server UUID.
+
+Servers: A list of the servers, with name and UUID, the app will track.
