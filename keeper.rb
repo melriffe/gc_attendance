@@ -131,6 +131,57 @@ class BattlefieldMap
 
 end
 
+class Army
+  attr_reader :tickets
+
+  def initialize data = {}, tickets
+    @data, @tickets = data, tickets
+  end
+
+  def faction
+    FACTIONS[faction_key]
+  end
+
+  def soldiers
+    @soldiers ||= list_soldiers
+    @soldiers.reject { |soldier| soldier.commander? }
+  end
+
+  def squads
+    soldiers.group_by { |soldier| soldier.squad }
+  end
+
+  def score
+    soldiers.inject(0) { |sum, solider| sum + solider.score }
+  end
+
+  def commander
+    commander = soldiers.detect { |s| s.commander? }
+    commander.nil? ? 'Unassigned' : commander.to_s
+  end
+
+  private
+
+  def data
+    @data
+  end
+
+  def faction_key
+    data['faction']
+  end
+
+  def list_soldiers
+    soldiers = []
+    data['players'].each do |key, value|
+      soldiers << Soldier.new( key, value )
+    end
+    soldiers
+  end
+
+  FACTIONS = %w(US RU CN)
+
+end
+
 class Game
 
   def initialize data = {}
@@ -237,54 +288,29 @@ class Game
 
 end
 
-class Army
-  attr_reader :tickets
+class Server
+  attr_reader :name, :uuid
 
-  def initialize data = {}, tickets
-    @data, @tickets = data, tickets
+  def initialize data = {}
+    @name = data[:name]
+    @uuid = data[:uuid]
   end
 
-  def faction
-    FACTIONS[faction_key]
+  def valid?
+    name.present? && uuid.present?
   end
 
-  def soldiers
-    @soldiers ||= list_soldiers
-    @soldiers.reject { |soldier| soldier.commander? }
-  end
+end
 
-  def squads
-    soldiers.group_by { |soldier| soldier.squad }
-  end
+class API
 
-  def score
-    soldiers.inject(0) { |sum, solider| sum + solider.score }
-  end
-
-  def commander
-    commander = soldiers.detect { |s| s.commander? }
-    commander.nil? ? 'Unassigned' : commander.to_s
+  def self.fetch server
+    RestClient.get "#{KEEPER_URL}/#{server.uuid}"
   end
 
   private
 
-  def data
-    @data
-  end
-
-  def faction_key
-    data['faction']
-  end
-
-  def list_soldiers
-    soldiers = []
-    data['players'].each do |key,value|
-      soldiers << Soldier.new( key, value )
-    end
-    soldiers
-  end
-
-  FACTIONS = %w(US RU CN)
+  KEEPER_URL = 'http://keeper.battlelog.com/snapshot/'
 
 end
 
@@ -298,8 +324,10 @@ puts 'Calling http://keeper.battlelog.com'
 # uuid = '3ac44c83-df31-4bc4-bccb-fea4902a0304'
 # uuid = 'eb414b20-dc82-4058-9ae1-c6ca610d845e'
 # uuid = '4e54a287-4ae0-4622-ad63-b6a6f66fd4af'
-uuid = 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
-keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
+# uuid = 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
+# keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
+
+server = Server.new name: 'who cares', uuid: 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
 
 trap('INT') { puts 'Shutting down.'; exit }
 
@@ -312,18 +340,21 @@ trap('INT') { puts 'Shutting down.'; exit }
 while true do
   sleep_interval = 5
 
-  response = RestClient.get keeper_url
+  response = API.fetch server
 
   puts response.code
   data = JSON.parse response
   # ap data
-  ap data['snapshot']['status']
-  ap data['snapshot']['gameId']
-  ap data['snapshot']['roundTime']
-  ap data['snapshot']['currentMap']
+  # ap data['snapshot']['status']
+  # ap data['snapshot']['gameId']
+  # ap data['snapshot']['roundTime']
+  # ap data['snapshot']['currentMap']
 
-  # begin
-    # game = Game.new data
+  begin
+    game = Game.new data
+
+    ap game.id
+    ap game.elapsed_time
 
     # header = []
     # body = []
@@ -388,10 +419,10 @@ while true do
     #   sleep_interval += 3
     # end
 
-  # rescue
-  #   puts "Server Data unavailable..."
-  #   sleep_interval *= 2
-  # end
+  rescue
+    puts "Server Data unavailable..."
+    sleep_interval *= 2
+  end
 
   sleep sleep_interval
 end
