@@ -129,6 +129,7 @@ class BattlefieldMap
     "XP4_SubBase"   => "Hammerhead",
     "XP4_Titan"     => "Hangar 21",
     "XP4_WlkrFtry"  => "Giants Of Karelia",
+    "XP5_Night_01"  => "Zavod: Graveyard Shift",
   }
 
 end
