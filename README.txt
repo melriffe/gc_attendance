@@ -63,3 +63,10 @@ random thoughts:
 
 * live scoreboard with an image for the selected map
 --------------------------------------------------------------------------------
+
+The heart of the app will be a loop and the storage of JSON data. However, I
+also want the ability to start and stop this loop. The app will be idle most of
+the time since it's primary purpose will be to record GC Battle Days.
+
+A Game will have many Snapshots. Because these are snapshots I will not be able
+to accurately capture the start or end of a Game (a round).

@@ -126,7 +126,7 @@ class BattlefieldMap
     "XP4_SubBase"   => "Hammerhead",
     "XP4_Titan"     => "Hangar 21",
     "XP4_WlkrFtry"  => "Giants Of Karelia",
-    "XP5_Night_01"  => "Zavod: Graveyard Shift"
+    "XP5_Night_01"  => "Zavod: Graveyard Shift",
   }
 
 end
@@ -320,14 +320,13 @@ end
 
 puts 'Calling http://keeper.battlelog.com'
 
-# uuid = '26edcc9f-172e-445c-b25f-649f099939e3'
 # uuid = '3ac44c83-df31-4bc4-bccb-fea4902a0304'
 # uuid = 'eb414b20-dc82-4058-9ae1-c6ca610d845e'
 # uuid = '4e54a287-4ae0-4622-ad63-b6a6f66fd4af'
-# uuid = 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
+uuid = 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
 # keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
 
-server = Server.new name: 'who cares', uuid: 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
+server = Server.new name: 'who cares', uuid: uuid
 
 trap('INT') { puts 'Shutting down.'; exit }
 

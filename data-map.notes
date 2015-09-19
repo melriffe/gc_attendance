@@ -26,3 +26,9 @@ Gun Master doesn't have one, doesn't have a game mode
 is in seconds
 
 --------------------------------------------------------------------------------
+
+I wish I knew what 'gameId' represented and when it changes!
+
+A Game is unique because of the Server it is on and the Map that is loaded.
+
+A Server will have many Games; A Game will have many Snapshots
