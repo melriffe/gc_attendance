@@ -302,7 +302,7 @@ servers = {
   'eb414b20-dc82-4058-9ae1-c6ca610d845e' => 'Global-Conflict-org-US-Server',
 }
 
-uuid = servers.keys.last
+uuid = servers.keys[1]
 keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
 
 trap("INT") { puts "Shutting down."; exit }
