@@ -70,3 +70,14 @@ the time since it's primary purpose will be to record GC Battle Days.
 
 A Game will have many Snapshots. Because these are snapshots I will not be able
 to accurately capture the start or end of a Game (a round).
+
+--------------------------------------------------------------------------------
+random thoughts:
+
+* top scoring squad
+* top five individual scores
+* most lethal squad (highest number of kills)
+* most effective squad (best K/D ratio)
+* zombie squad (highest number of deaths)
+* zombie soldier
+--------------------------------------------------------------------------------
