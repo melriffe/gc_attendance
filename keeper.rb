@@ -2,7 +2,7 @@
 
 require 'rubygems'
 
-require 'rest-client'
+require 'httparty'
 require 'json'
 
 require 'awesome_print'
@@ -300,127 +300,54 @@ class Server
     name.present? && uuid.present?
   end
 
-end
-
-class API
-
-  def self.fetch server
-    RestClient.get "#{KEEPER_URL}/#{server.uuid}"
+  def snapshot
+    APIv2.fetch self
   end
 
-  private
-
-  KEEPER_URL = 'http://keeper.battlelog.com/snapshot/'
-
 end
 
-def center message
-  (' ' * (39 - message.size / 2)) + message
+class APIv2
+  include HTTParty
+  base_uri 'keeper.battlelog.com'
+
+  def self.fetch server
+    APIv2.get "/snapshot/#{server.uuid}"
+  end
 end
 
 puts 'Calling http://keeper.battlelog.com'
 
-# uuid = '3ac44c83-df31-4bc4-bccb-fea4902a0304'
-# uuid = 'eb414b20-dc82-4058-9ae1-c6ca610d845e'
-# uuid = '4e54a287-4ae0-4622-ad63-b6a6f66fd4af'
-uuid = 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
-# keeper_url = "http://keeper.battlelog.com/snapshot/#{uuid}"
-
-server = Server.new name: 'who cares', uuid: uuid
+# server = Server.new name: 'some-unique-name-1', uuid: '4e54a287-4ae0-4622-ad63-b6a6f66fd4af'
+server = Server.new name: 'some-unique-name-2', uuid: 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
+# server = Server.new name: 'www-twitch-tv-21cw-tournament', uuid: '624a8797-26bb-436f-92de-2a375c7268f0'
+# server = Server.new name: 'Global-Conflict-org-EU-Server', uuid: '3ac44c83-df31-4bc4-bccb-fea4902a0304'
 
 trap('INT') { puts 'Shutting down.'; exit }
-
-# today = Date.today.strftime("%Y-%m-%d")
-# battle_reports_location = "./battle_reports/#{today}"
-# FileUtils.mkdir_p battle_reports_location
-
-# puts "Saving battle reports in #{battle_reports_location}"
 
 while true do
   sleep_interval = 5
 
-  response = API.fetch server
-
+  response = server.snapshot
   puts response.code
-  data = JSON.parse response
-  # ap data
-  # ap data['snapshot']['status']
-  # ap data['snapshot']['gameId']
-  # ap data['snapshot']['roundTime']
-  # ap data['snapshot']['currentMap']
 
-  begin
-    game = Game.new data
+  unless response.code == 200
+    puts response.body
+  else
+    data = JSON.parse response.body
 
-    ap game.id
-    ap game.elapsed_time
+    begin
+      game = Game.new data
 
-    # header = []
-    # body = []
-    # header << "================================================================================"
-    # header << ( "%-32s%-30s%18s" % [game.map, game.mode, game.elapsed_time] )
-    # header << "--------------------------------------------------------------------------------"
-    # header << (center "Army 1 (#{game.army_1.faction}) vs. Army 2 (#{game.army_2.faction})")
-    # header << (center "#{game.army_1.faction} - #{game.army_1.tickets} vs. #{game.army_2.faction} - #{game.army_2.tickets}")
-    # header << (center "#{game.army_1.faction} - #{game.army_1.score} vs. #{game.army_2.faction} - #{game.army_2.score}")
-    # header << "--------------------------------------------------------------------------------"
-    # header << "Soldiers Waiting: #{game.waiting_count}"
-    # header << "Soldiers Joining: #{game.lobby.size}"
-    # unless game.lobby.empty?
-    #   header << "--------------------------------------------------------------------------------"
-    #   header << "Joining:"
-    #   game.lobby.each do |soldier|
-    #     header << "\t#{soldier}"
-    #   end
-    # end
-    # header << "--------------------------------------------------------------------------------"
-    # player_count = ('%20s%40s%-20s' % ["Army 1 Players: #{game.army_1.soldiers.size}", "", "Army 2 Players: #{game.army_2.soldiers.size}"])
-    # header << player_count
-    # body << "--------------------------------------------------------------------------------"
-    # body << " Army 1 Commander: #{game.army_1.commander}"
-    # body << " Army 2 Commander: #{game.army_2.commander}"
-    # body << "--------------------------------------------------------------------------------"
-    # body << (center "Army 1 Attendance:")
-    # army_1_attendance = game.army_1.soldiers.group_by { |soldier| soldier.tag }
-    # army_1_attendance.keys.sort_by { |k| k.downcase }.each do |key|
-    #   body << "[#{key.empty? ? 'none' : key}]"
-    #   soldiers = army_1_attendance[key]
-    #   soldiers.sort_by { |s| s.name.downcase }.each do |soldier|
-    #     body << "\t#{soldier.name}"
-    #   end
-    # end
-    # body << "--------------------------------------------------------------------------------"
-    # body << (center "Army 2 Attendance:")
-    # army_2_attendance = game.army_2.soldiers.group_by { |soldier| soldier.tag }
-    # army_2_attendance.keys.sort_by { |k| k.downcase }.each do |key|
-    #   body << "[#{key.empty? ? 'none' : key}]"
-    #   soldiers = army_2_attendance[key]
-    #   soldiers.sort_by { |s| s.name.downcase }.each do |soldier|
-    #     body << "\t#{soldier.name}"
-    #   end
-    # end
-    # body << "================================================================================"
+      ap server.name
+      ap game.id
+      ap game.elapsed_time
+      ap game.mode
+      ap game.map
 
-    # if game.started?
-    #   battle_report_name = "#{battle_reports_location}/#{game.id}_#{game.map.gsub(/ /,'')}_#{Time.now.utc.to_i}.report"
-    #   File.open( battle_report_name, 'w' ) do |file|
-    #     header.each do |line|
-    #       file.puts line
-    #     end
-    #     body.each do |line|
-    #       file.puts line
-    #     end
-    #   end
-    #   puts header.join("\n")
-    #   puts "================================================================================"
-    # else
-    #   puts "Game has not started..."
-    #   sleep_interval += 3
-    # end
-
-  rescue
-    puts "Server Data unavailable..."
-    sleep_interval *= 2
+    rescue
+      puts "Server Data unavailable..."
+      sleep_interval *= 2
+    end
   end
 
   sleep sleep_interval
