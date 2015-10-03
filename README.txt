@@ -80,4 +80,5 @@ random thoughts:
 * most effective squad (best K/D ratio)
 * zombie squad (highest number of deaths)
 * zombie soldier
+* each item per round/map/day
 --------------------------------------------------------------------------------
