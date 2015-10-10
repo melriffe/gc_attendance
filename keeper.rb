@@ -318,6 +318,7 @@ end
 puts 'Calling http://keeper.battlelog.com'
 
 # server = Server.new name: 'some-unique-name-1', uuid: '4e54a287-4ae0-4622-ad63-b6a6f66fd4af'
+# server = Server.new name: 'TBG-BATTLEFIELD-3-NEW-40HZ-TICKRATE-TBGCLAN-COM-3', uuid: '2829d36c-15f4-40f3-81f6-3bc8c111bd8a'
 # server = Server.new name: 'Oaks-Clan-ESP-Conquest-All-Maps-Votemap', uuid: 'c154635c-2c53-44f8-864d-1c63ddc5fb24'
 server = Server.new name: 'www-twitch-tv-21cw-tournament', uuid: '624a8797-26bb-436f-92de-2a375c7268f0'
 # server = Server.new name: 'Global-Conflict-org-EU-Server', uuid: '3ac44c83-df31-4bc4-bccb-fea4902a0304'
